@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Light theme (default) */
+:root {
+  --color-bg: #fafafa;
+  --color-bg-secondary: #f5f5f5;
+  --color-text: #18181b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-border: #e5e5e5;
+  --color-card: #ffffff;
+  --color-card-hover: #fafafa;
+  --color-accent: #6366f1;
+  --color-accent-hover: #4f46e5;
+  --gradient-title-from: #18181b;
+  --gradient-title-to: #6366f1;
+}
+
+/* Dark theme */
+.dark {
+  --color-bg: #09090b;
+  --color-bg-secondary: #18181b;
+  --color-text: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-border: #27272a;
+  --color-card: #18181b;
+  --color-card-hover: #27272a;
+  --color-accent: #818cf8;
+  --color-accent-hover: #a5b4fc;
+  --gradient-title-from: #ffffff;
+  --gradient-title-to: #818cf8;
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-bg: #09090b;
+    --color-bg-secondary: #18181b;
+    --color-text: #fafafa;
+    --color-text-secondary: #a1a1aa;
+    --color-text-muted: #71717a;
+    --color-border: #27272a;
+    --color-card: #18181b;
+    --color-card-hover: #27272a;
+    --color-accent: #818cf8;
+    --color-accent-hover: #a5b4fc;
+    --gradient-title-from: #ffffff;
+    --gradient-title-to: #818cf8;
+  }
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Gradient title effect */
+.gradient-title {
+  background: linear-gradient(135deg, var(--gradient-title-from) 0%, var(--gradient-title-to) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom prose styles for markdown content */
+.prose-custom {
+  color: var(--color-text-secondary);
+}
+
+.prose-custom h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.prose-custom h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.prose-custom h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.prose-custom p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.prose-custom ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.prose-custom ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.prose-custom li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.prose-custom li::marker {
+  color: var(--color-text-muted);
+}
+
+.prose-custom a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-custom a:hover {
+  color: var(--color-accent-hover);
+}
+
+.prose-custom strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.prose-custom code {
+  color: var(--color-text);
+  background-color: var(--color-bg-secondary);
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: var(--font-mono), monospace;
+}
+
+.prose-custom pre {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.prose-custom pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* rehype-pretty-code */
+.prose-custom figure[data-rehype-pretty-code-figure] {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-custom figure[data-rehype-pretty-code-figure] pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose-custom [data-rehype-pretty-code-caption] {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.prose-custom blockquote {
+  border-left: 4px solid var(--color-border);
+  padding-left: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.prose-custom hr {
+  border-color: var(--color-border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose-custom table {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.prose-custom thead {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.prose-custom th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.prose-custom td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.prose-custom tbody tr:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.prose-custom img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-custom figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose-custom figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
