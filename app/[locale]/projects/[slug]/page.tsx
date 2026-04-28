@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
-import { getProjectBySlug, getProjects, getTagConfig, ProjectFrontmatter } from "@/lib/content";
+import { getProjectBySlug, getProjects, getTagConfig } from "@/lib/content";
 import { TagBadge } from "@/components/TagBadge";
 import { MDXImage } from "@/components/MDXImage";
 
@@ -17,7 +17,7 @@ interface PageProps {
 export async function generateStaticParams() {
   const { locales } = await import("@/i18n/navigation");
   return locales.flatMap((locale) =>
-    getProjects(locale).map((p) => ({ slug: p.slug }))
+    getProjects(locale).map((p) => ({ locale, slug: p.slug }))
   );
 }
 
@@ -35,17 +35,8 @@ export default async function ProjectPage({ params }: PageProps) {
   const project = getProjectBySlug(slug, locale);
   if (!project) notFound();
 
-  return <ProjectContent frontmatter={project.frontmatter} content={project.content} />;
-}
-
-function ProjectContent({
-  frontmatter,
-  content,
-}: {
-  frontmatter: ProjectFrontmatter;
-  content: string;
-}) {
-  const t = useTranslations("projects");
+  const t = await getTranslations({ locale, namespace: "projects" });
+  const { frontmatter, content } = project;
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">

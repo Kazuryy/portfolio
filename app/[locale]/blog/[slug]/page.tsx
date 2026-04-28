@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
-import { getArticleBySlug, getArticles, getTagConfig, ArticleFrontmatter } from "@/lib/content";
+import { getArticleBySlug, getArticles, getTagConfig } from "@/lib/content";
 import { TagBadge } from "@/components/TagBadge";
 import { MDXImage } from "@/components/MDXImage";
 
@@ -17,7 +17,7 @@ interface PageProps {
 export async function generateStaticParams() {
   const { locales } = await import("@/i18n/navigation");
   return locales.flatMap((locale) =>
-    getArticles(locale).map((a) => ({ slug: a.slug }))
+    getArticles(locale).map((a) => ({ locale, slug: a.slug }))
   );
 }
 
@@ -35,17 +35,8 @@ export default async function ArticlePage({ params }: PageProps) {
   const article = getArticleBySlug(slug, locale);
   if (!article) notFound();
 
-  return <ArticleContent frontmatter={article.frontmatter} content={article.content} />;
-}
-
-function ArticleContent({
-  frontmatter,
-  content,
-}: {
-  frontmatter: ArticleFrontmatter;
-  content: string;
-}) {
-  const t = useTranslations("blog");
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const { frontmatter, content } = article;
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
