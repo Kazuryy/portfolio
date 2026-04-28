@@ -52,8 +52,8 @@ export default async function Home() {
             <div className="mt-10 flex items-center justify-center gap-4">
               {[
                 { href: "https://github.com/Kazuryy", icon: Github, label: "GitHub" },
-                { href: "https://linkedin.com/in/kazury", icon: Linkedin, label: "LinkedIn" },
-                { href: "mailto:contact@kazury.fr", icon: Mail, label: "Email" },
+                { href: "https://linkedin.com/in/ronanjacques", icon: Linkedin, label: "LinkedIn" },
+                { href: "mailto:contact@kazury.dev", icon: Mail, label: "Email" },
               ].map(({ href, icon: Icon, label }) => (
                 <a
                   key={label}
