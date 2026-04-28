@@ -2,8 +2,6 @@ services:
   portfolio:
     build: .
     restart: unless-stopped
-    ports:
-      - "6767:3000"
     networks:
       - cloudflared-net
 
