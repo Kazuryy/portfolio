@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "subtitle": "Cybersecurity · Infra · Dev",
+    "description": "2nd year student at Guardia School Paris. I build my homelab, develop tools I was missing, and learn by breaking things.",
+    "cta_projects": "See my projects",
+    "cta_blog": "Blog",
+    "highlights_sec_title": "Cybersecurity",
+    "highlights_sec_desc": "Student at Guardia. Web pentesting, forensics, reverse engineering, OSINT — member of the ISR club and SOC Lab. I break things to understand how to protect them.",
+    "highlights_infra_title": "Infra & Self-hosting",
+    "highlights_infra_desc": "Full homelab: Proxmox, Unifi, Authentik SSO, Nextcloud, Immich, Dokploy, Pangolin. ISR club at Guardia — ProxFibre cluster with Stormshield.",
+    "highlights_dev_title": "Dev",
+    "highlights_dev_desc": "Followfeat (roadmap tracker), Ansible automation scripts, self-hosted GitLab. Useful code, infrastructure that holds.",
+    "featured_title": "Featured projects",
+    "see_all": "See all projects",
+    "cta_title": "Work together?",
+    "cta_desc": "Internship, project, collaboration or just a question — feel free to reach out.",
+    "cta_more": "Learn more",
+    "cta_contact": "Contact me"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "What I've built, broken, or automated.",
+    "empty": "No projects yet.",
+    "back": "All projects",
+    "see_github": "View on GitHub",
+    "status_done": "Done",
+    "status_wip": "In progress"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Technical notes, analyses and explorations.",
+    "empty": "No articles yet.",
+    "back": "All articles"
+  },
+  "about": {
+    "title": "About",
+    "description": "2nd year student at Guardia School Paris, cybersecurity track. I build my homelab, contribute to the ISR club, develop open-source tools, and spend too much time optimising my infrastructure.",
+    "section_formation": "Education",
+    "section_skills": "Skills",
+    "section_contact": "Find me",
+    "school": "Guardia Cybersecurity School — Paris",
+    "degree": "Bachelor in Cybersecurity (3-year)",
+    "school_desc": "Specialist cybersecurity school. Curriculum focused on pentesting, forensics, networking and system administration. Member of the ISR club (Infrastructure, Systems & Networks) and SOC Lab. Participated in GuardiHack 2026 with team MolyCorp.",
+    "period": "2024 — present"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Internship, project, collaboration or just a question — I'll get back to you.",
+    "github_desc": "Check my code and projects",
+    "linkedin_desc": "My professional profile",
+    "email_desc": "contact@kazury.fr"
+  },
+  "footer": {
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  }
+}
