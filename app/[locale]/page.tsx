@@ -51,7 +51,7 @@ export default async function Home() {
             {/* Social links */}
             <div className="mt-10 flex items-center justify-center gap-4">
               {[
-                { href: "https://github.com/kazury", icon: Github, label: "GitHub" },
+                { href: "https://github.com/Kazuryy", icon: Github, label: "GitHub" },
                 { href: "https://linkedin.com/in/kazury", icon: Linkedin, label: "LinkedIn" },
                 { href: "mailto:contact@kazury.fr", icon: Mail, label: "Email" },
               ].map(({ href, icon: Icon, label }) => (

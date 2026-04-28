@@ -101,7 +101,7 @@ export default function AboutPage() {
         </h2>
         <div className="flex flex-wrap gap-4">
           {[
-            { href: "https://github.com/kazury", icon: Github, label: "GitHub", external: true },
+            { href: "https://github.com/Kazuryy", icon: Github, label: "GitHub", external: true },
             { href: "https://linkedin.com/in/kazury", icon: Linkedin, label: "LinkedIn", external: true },
           ].map(({ href, icon: Icon, label, external }) => (
             <a

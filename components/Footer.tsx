@@ -20,7 +20,7 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/kazury"
+              href="https://github.com/Kazuryy"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-opacity hover:opacity-70"

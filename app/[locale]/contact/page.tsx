@@ -13,7 +13,7 @@ export default function ContactPage() {
     {
       label: "GitHub",
       description: t("github_desc"),
-      href: "https://github.com/kazury",
+      href: "https://github.com/Kazuryy",
       icon: Github,
       external: true,
     },
