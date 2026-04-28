@@ -30,7 +30,7 @@ export function Footer() {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/kazury"
+              href="https://linkedin.com/in/ronanjacques"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-opacity hover:opacity-70"
@@ -40,7 +40,7 @@ export function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:contact@kazury.fr"
+              href="mailto:contact@kazury.dev"
               className="transition-opacity hover:opacity-70"
               style={{ color: "var(--color-text-muted)" }}
               aria-label="Email"

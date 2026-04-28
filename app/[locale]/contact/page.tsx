@@ -20,14 +20,14 @@ export default function ContactPage() {
     {
       label: "LinkedIn",
       description: t("linkedin_desc"),
-      href: "https://linkedin.com/in/kazury",
+      href: "https://linkedin.com/in/ronanjacques",
       icon: Linkedin,
       external: true,
     },
     {
       label: "Email",
       description: t("email_desc"),
-      href: "mailto:contact@kazury.fr",
+      href: "mailto:contact@kazury.dev",
       icon: Mail,
       external: false,
     },
