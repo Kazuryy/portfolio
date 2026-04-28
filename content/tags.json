@@ -1,0 +1,256 @@
+{
+  "tags": {
+    "docker": {
+      "color": "#0284a1",
+      "bgColor": "#e0f7fc",
+      "darkColor": "#0db7ed",
+      "darkBgColor": "#012533"
+    },
+    "proxmox": {
+      "color": "#b45309",
+      "bgColor": "#fef3c7",
+      "darkColor": "#fbbf24",
+      "darkBgColor": "#3a2700"
+    },
+    "python": {
+      "color": "#3776ab",
+      "bgColor": "#e8f0fa",
+      "darkColor": "#7ab3f7",
+      "darkBgColor": "#0d2a4a"
+    },
+    "typescript": {
+      "color": "#3178c6",
+      "bgColor": "#dbeafe",
+      "darkColor": "#60a5fa",
+      "darkBgColor": "#0d2a4a"
+    },
+    "linux": {
+      "color": "#374151",
+      "bgColor": "#f3f4f6",
+      "darkColor": "#d1d5db",
+      "darkBgColor": "#1f2937"
+    },
+    "web": {
+      "color": "#7c3aed",
+      "bgColor": "#ede9fe",
+      "darkColor": "#a78bfa",
+      "darkBgColor": "#2d1b69"
+    },
+    "forensics": {
+      "color": "#065f46",
+      "bgColor": "#d1fae5",
+      "darkColor": "#34d399",
+      "darkBgColor": "#022c22"
+    },
+    "pwn": {
+      "color": "#991b1b",
+      "bgColor": "#fee2e2",
+      "darkColor": "#f87171",
+      "darkBgColor": "#450a0a"
+    },
+    "crypto": {
+      "color": "#92400e",
+      "bgColor": "#fef3c7",
+      "darkColor": "#fcd34d",
+      "darkBgColor": "#3a1a00"
+    },
+    "osint": {
+      "color": "#1e40af",
+      "bgColor": "#dbeafe",
+      "darkColor": "#93c5fd",
+      "darkBgColor": "#172554"
+    },
+    "traefik": {
+      "color": "#15803d",
+      "bgColor": "#dcfce7",
+      "darkColor": "#4ade80",
+      "darkBgColor": "#052e16"
+    },
+    "ansible": {
+      "color": "#b91c1c",
+      "bgColor": "#fee2e2",
+      "darkColor": "#fca5a5",
+      "darkBgColor": "#450a0a"
+    },
+    "nextjs": {
+      "color": "#18181b",
+      "bgColor": "#f4f4f5",
+      "darkColor": "#e4e4e7",
+      "darkBgColor": "#27272a"
+    },
+    "gitlab": {
+      "color": "#c2410c",
+      "bgColor": "#ffedd5",
+      "darkColor": "#fc6d26",
+      "darkBgColor": "#3c1700"
+    },
+    "nextcloud": {
+      "color": "#0082c9",
+      "bgColor": "#e0f2fe",
+      "darkColor": "#1cafff",
+      "darkBgColor": "#00253a"
+    },
+    "authentik": {
+      "color": "#4338ca",
+      "bgColor": "#e0e7ff",
+      "darkColor": "#818cf8",
+      "darkBgColor": "#1e1b4b"
+    },
+    "unifi": {
+      "color": "#0057d1",
+      "bgColor": "#dbeafe",
+      "darkColor": "#60a5fa",
+      "darkBgColor": "#0a1f4d"
+    },
+    "immich": {
+      "color": "#a16207",
+      "bgColor": "#fefce8",
+      "darkColor": "#ffb400",
+      "darkBgColor": "#3a1f00"
+    },
+    "dokploy": {
+      "color": "#6d28d9",
+      "bgColor": "#f3e8ff",
+      "darkColor": "#c084fc",
+      "darkBgColor": "#3b0764"
+    },
+    "stormshield": {
+      "color": "#1e3a8a",
+      "bgColor": "#dbeafe",
+      "darkColor": "#93c5fd",
+      "darkBgColor": "#0f172a"
+    },
+    "pangolin": {
+      "color": "#c2410c",
+      "bgColor": "#ffedd5",
+      "darkColor": "#fb923c",
+      "darkBgColor": "#431407"
+    },
+    "react": {
+      "color": "#0891b2",
+      "bgColor": "#ecfeff",
+      "darkColor": "#61dafb",
+      "darkBgColor": "#082f49"
+    },
+    "rust": {
+      "color": "#9a3412",
+      "bgColor": "#ffedd5",
+      "darkColor": "#ce412b",
+      "darkBgColor": "#431407"
+    },
+    "sveltekit": {
+      "color": "#c2410c",
+      "bgColor": "#fff7ed",
+      "darkColor": "#ff3e00",
+      "darkBgColor": "#3c1000"
+    },
+    "svelte": {
+      "color": "#c2410c",
+      "bgColor": "#fff7ed",
+      "darkColor": "#ff3e00",
+      "darkBgColor": "#3c1000"
+    },
+    "fastapi": {
+      "color": "#047857",
+      "bgColor": "#d1fae5",
+      "darkColor": "#34d399",
+      "darkBgColor": "#022c22"
+    },
+    "c#": {
+      "color": "#512bd4",
+      "bgColor": "#ede9fe",
+      "darkColor": "#a78bfa",
+      "darkBgColor": "#2e1065"
+    },
+    ".net": {
+      "color": "#512bd4",
+      "bgColor": "#ede9fe",
+      "darkColor": "#a78bfa",
+      "darkBgColor": "#2e1065"
+    },
+    "axum": {
+      "color": "#b45309",
+      "bgColor": "#fff7ed",
+      "darkColor": "#fdba74",
+      "darkBgColor": "#431407"
+    },
+    "jellyfin": {
+      "color": "#7a3a9a",
+      "bgColor": "#f5f0fb",
+      "darkColor": "#aa5cc3",
+      "darkBgColor": "#2d1040"
+    },
+    "grafana": {
+      "color": "#c44a00",
+      "bgColor": "#fff4ed",
+      "darkColor": "#f46800",
+      "darkBgColor": "#3a1700"
+    },
+    "prometheus": {
+      "color": "#b91c1c",
+      "bgColor": "#fef2f2",
+      "darkColor": "#fc8181",
+      "darkBgColor": "#450a0a"
+    },
+    "wazuh": {
+      "color": "#1d5fcc",
+      "bgColor": "#e0effe",
+      "darkColor": "#3595f9",
+      "darkBgColor": "#0d2154"
+    },
+    "n8n": {
+      "color": "#991b1b",
+      "bgColor": "#fff1f2",
+      "darkColor": "#fb7185",
+      "darkBgColor": "#4c0519"
+    },
+    "infra": {
+      "color": "#334155",
+      "bgColor": "#f1f5f9",
+      "darkColor": "#94a3b8",
+      "darkBgColor": "#1e293b"
+    },
+    "réseau": {
+      "color": "#0369a1",
+      "bgColor": "#f0f9ff",
+      "darkColor": "#7dd3fc",
+      "darkBgColor": "#082f49"
+    },
+    "cybersécurité": {
+      "color": "#dc2626",
+      "bgColor": "#fee2e2",
+      "darkColor": "#f87171",
+      "darkBgColor": "#450a0a"
+    },
+    "sécurité": {
+      "color": "#9f1239",
+      "bgColor": "#ffe4e6",
+      "darkColor": "#fb7185",
+      "darkBgColor": "#4c0519"
+    },
+    "dev": {
+      "color": "#4f46e5",
+      "bgColor": "#e0e7ff",
+      "darkColor": "#818cf8",
+      "darkBgColor": "#1e1b4b"
+    },
+    "automatisation": {
+      "color": "#d97706",
+      "bgColor": "#fffbeb",
+      "darkColor": "#fbbf24",
+      "darkBgColor": "#3a2200"
+    },
+    "reverse": {
+      "color": "#475569",
+      "bgColor": "#e2e8f0",
+      "darkColor": "#94a3b8",
+      "darkBgColor": "#1e293b"
+    }
+  },
+  "default": {
+    "color": "#4b5563",
+    "bgColor": "#f3f4f6",
+    "darkColor": "#9ca3af",
+    "darkBgColor": "#374151"
+  }
+}
