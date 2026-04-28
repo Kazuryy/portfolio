@@ -17,6 +17,13 @@ next-env.d.ts
 .DS_Store
 Thumbs.db
 
+# Source icons (only generated assets are committed)
+public/icons/*.png
+!public/icons/favicon-*.png
+!public/icons/apple-touch-icon.png
+!public/icons/android-chrome-*.png
+!public/icons/icon-*.png
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

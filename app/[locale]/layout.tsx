@@ -31,6 +31,17 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio de Kazury — étudiant en cybersécurité à Guardia, passionné d'infra, de pentest et de dev.",
+  icons: {
+    icon: [
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    other: [
+      { rel: "android-chrome", url: "/icons/android-chrome-192x192.png", sizes: "192x192" },
+      { rel: "android-chrome", url: "/icons/android-chrome-512x512.png", sizes: "512x512" },
+    ],
+  },
 };
 
 export default async function LocaleLayout({
