@@ -1,7 +1,7 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
 
-RUN corepack enable
+RUN apk upgrade --no-cache busybox && corepack enable
 
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
@@ -14,7 +14,8 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-RUN addgroup --system --gid 1001 nodejs \
+RUN apk upgrade --no-cache busybox \
+ && addgroup --system --gid 1001 nodejs \
  && adduser --system --uid 1001 nextjs
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
