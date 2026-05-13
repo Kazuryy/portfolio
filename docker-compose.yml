@@ -3,8 +3,8 @@ services:
     build: .
     restart: unless-stopped
     networks:
-      - cloudflared-net
+      - portfolio-net
 
 networks:
-  cloudflared-net:
+  portfolio-net:
     external: true
