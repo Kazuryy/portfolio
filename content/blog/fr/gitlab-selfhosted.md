@@ -1,16 +1,16 @@
 ---
-title: "Self-héberger GitLab en 2025"
+title: "Auto-héberger GitLab en 2025"
 description: "Pourquoi j'ai installé ma propre instance GitLab, comment ça se passe, et si ça vaut vraiment le coup face à GitHub."
 date: "2025-03-23"
 tags: ["GitLab", "Docker", "Linux"]
 draft: false
 ---
 
-## Pourquoi self-héberger son Git ?
+## Pourquoi auto-héberger son Git ?
 
 GitHub est pratique, mais il a des limites : les minutes CI/CD gratuites s'épuisent vite, les repos privés pour une organisation demandent un plan payant, et les données restent chez Microsoft.
 
-GitLab self-hosted règle tout ça : CI/CD illimité sur ses propres runners, repos privés sans restriction, et contrôle total. Pour un homelab avec déjà de l'infra qui tourne, c'est logique.
+GitLab auto-hébergé règle tout ça : CI/CD illimité sur ses propres runners, repos privés sans restriction, et contrôle total. Pour un homelab avec déjà de l'infra qui tourne, c'est logique.
 
 ## Installation via Docker
 
@@ -80,7 +80,7 @@ docker exec -it gitlab-runner gitlab-runner register
 
 ## GitLab vs GitHub : mon verdict
 
-GitLab self-hosted gagne sur la CI/CD. Les pipelines sont plus expressifs, les runners sont illimités, et tout est dans la même interface sans passer par des GitHub Actions Marketplace.
+GitLab auto-hébergé gagne sur la CI/CD. Les pipelines sont plus expressifs, les runners sont illimités, et tout est dans la même interface sans passer par des GitHub Actions Marketplace.
 
 GitHub gagne sur l'écosystème. Les intégrations tierces, les pull requests, la communauté open-source : tout le monde est sur GitHub. Pour des projets publics ou en collaboration externe, GitHub reste plus pratique.
 
