@@ -3,7 +3,7 @@ title: "Followfeat"
 description: "Self-hosted feedback, roadmap and changelog platform. Inspired by Featurebase, built with Next.js, Prisma and Authentik."
 date: "2025-03-01"
 tags: ["TypeScript", "Next.js", "React", "Docker"]
-status: "En cours"
+status: "Terminé"
 github: "https://github.com/Kazuryy/followfeat"
 featured: true
 order: 3

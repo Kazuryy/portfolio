@@ -54,11 +54,25 @@ export default async function ProjectPage({ params }: PageProps) {
           <span
             className="text-xs px-3 py-1 rounded-full font-medium"
             style={{
-              backgroundColor: frontmatter.status === "Terminé" ? "rgba(34, 197, 94, 0.15)" : "rgba(234, 179, 8, 0.15)",
-              color: frontmatter.status === "Terminé" ? "#16a34a" : "#ca8a04",
+              backgroundColor:
+                frontmatter.status === "Terminé"
+                  ? "rgba(34, 197, 94, 0.15)"
+                  : frontmatter.status === "Actif"
+                  ? "rgba(99, 102, 241, 0.15)"
+                  : "rgba(234, 179, 8, 0.15)",
+              color:
+                frontmatter.status === "Terminé"
+                  ? "#16a34a"
+                  : frontmatter.status === "Actif"
+                  ? "#6366f1"
+                  : "#ca8a04",
             }}
           >
-            {frontmatter.status === "Terminé" ? t("status_done") : t("status_wip")}
+            {frontmatter.status === "Terminé"
+              ? t("status_done")
+              : frontmatter.status === "Actif"
+              ? t("status_active")
+              : t("status_wip")}
           </span>
           {frontmatter.date && (
             <span className="text-sm" style={{ color: "var(--color-text-muted)" }}>

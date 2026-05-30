@@ -8,7 +8,7 @@
   },
   "home": {
     "subtitle": "Cybersecurity · Infra · Dev",
-    "description": "2nd year student at Guardia School Paris. I build my homelab, develop tools I was missing, and learn by breaking things.",
+    "description": "2nd year student at Guardia School Paris. I build my homelab and develop tools I was missing.",
     "cta_projects": "See my projects",
     "cta_blog": "Blog",
     "highlights_sec_title": "Cybersecurity",
@@ -31,7 +31,8 @@
     "back": "All projects",
     "see_github": "View on GitHub",
     "status_done": "Done",
-    "status_wip": "In progress"
+    "status_wip": "In progress",
+    "status_active": "Active"
   },
   "blog": {
     "title": "Blog",
@@ -47,7 +48,7 @@
     "section_contact": "Find me",
     "school": "Guardia Cybersecurity School — Paris",
     "degree": "Bachelor in Cybersecurity (3-year)",
-    "school_desc": "Specialist cybersecurity school. Curriculum focused on pentesting, forensics, networking and system administration. Member of the ISR club (Infrastructure, Systems & Networks) and SOC Lab. Participated in GuardiHack 2026 with team MolyCorp.",
+    "school_desc": "Specialist cybersecurity school. Curriculum focused on pentesting, forensics, networking and system administration. Member of the ISR club (Infrastructure, Systems & Networks) and SOC Lab. Participated in GuardiHack 2026.",
     "period": "2024 — present"
   },
   "contact": {

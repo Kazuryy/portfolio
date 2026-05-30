@@ -1,56 +1,52 @@
 ---
 title: "Homelab"
-description: "Infrastructure self-hosted complète : Proxmox, Unifi, Authentik SSO, Nextcloud, Immich, Dokploy et Pangolin."
+description: "Infrastructure self-hosted complète : Proxmox, Unifi, Authentik SSO, Nextcloud, Immich, Pangolin et Tailscale."
 date: "2023-09-01"
 tags: ["Proxmox", "Docker", "Linux", "Ansible", "Authentik"]
-status: "En cours"
+status: "Actif"
 featured: true
 order: 1
 ---
 
 ## Vue d'ensemble
 
-Mon homelab est une infrastructure self-hosted que je construis et fais évoluer depuis 2023. L'objectif : maîtriser la stack complète, du réseau physique à la couche applicative, en hébergeant moi-même les services que j'utilise au quotidien.
+Mon homelab est une infrastructure self-hosted que je construis et fais évoluer depuis 2023. Ce qui a commencé comme un projet personnel pour ne plus dépendre des services cloud commerciaux est progressivement devenu une petite plateforme partagée avec un cercle restreint d'amis (chacun avec son propre compte, son stockage et son accès aux services).
 
-## Matériel
+L'objectif était de construire quelque chose qui fonctionne vraiment : fiable, sécurisé, maintenable, et où je comprends chaque couche.
 
-Plusieurs machines font tourner le homelab :
+## Réseau & exposition
 
-- **Minisforum UM790 Pro** : nœud principal, AMD Ryzen 9 7940HS
-- **PC fixe** : AMD Ryzen 7 3700X, RX 6600 XT
-- **Dell Optiplex 7010** : Intel Core i3-3240, usage léger
-- **Synology DS923+** : NAS, 16 To de stockage
+L'un des choix fondamentaux a été de ne jamais ouvrir de port sur la box. Tous les services publics sont exposés via **Pangolin**, une alternative auto-hébergée à Cloudflare Tunnel. Il crée un tunnel chiffré vers un VPS, gère le reverse proxy, les certificats SSL automatiques, et impose un contrôle d'accès SSO sur chaque requête.
 
-Côté réseau :
+La contrepartie : les apps natives (clients mobiles, outils de sync desktop) ne savent pas gérer les redirections SSO. Pangolin intègre son propre VPN pour ça : les appareils se connectent directement via mon instance en contournant la couche SSO. Les ACL restent sur une seule stack.
 
-- **UniFi Switch Lite 8 PoE** : switch principal avec alimentation PoE
-- **UniFi U6** : access point Wi-Fi 6
-- **UniFi Cloud Gateway Ultra** : routeur/gateway
+**Tailscale** tourne en parallèle pour un usage différent : accès personnel aux services internes qui ne sont pas exposés via Pangolin.
 
-## Réseau
-
-Le réseau est segmenté en VLANs par type d'usage : appareils de confiance, serveurs, IoT, invités. Les règles de firewall entre VLANs sont gérées dans l'interface Unifi.
-
-Pangolin expose les services publics via un tunnel chiffré vers un VPS, sans ouvrir de port sur la box. Les services internes sont accessibles via Tailscale.
+Le réseau lui-même est segmenté en VLANs (appareils de confiance, serveurs, IoT, invités) avec des règles de firewall gérées via la stack UniFi.
 
 ## Virtualisation & orchestration
 
-Proxmox VE est l'hyperviseur principal. Les services légers tournent dans des conteneurs LXC, les services qui nécessitent un environnement isolé dans des VMs KVM.
+Proxmox VE fait tourner l'ensemble. Le choix entre LXC et KVM dépend surtout du besoin d'isolation : les services légers vont dans des conteneurs LXC, tout ce qui nécessite un environnement complet (ou que je ne veux pas en contact avec l'hôte) part dans une VM KVM.
 
-Dokploy gère le déploiement et le cycle de vie des stacks Docker : interface web, logs en temps réel, redéploiements depuis Git.
+Les stacks Docker sont gérées via **Dokploy** : un PaaS auto-hébergé minimaliste avec interface web, logs en temps réel et redéploiements déclenchés depuis Git. Ça rend les déploiements simples sans nécessiter un setup Kubernetes.
 
 ## Identité & accès
 
-Authentik centralise l'authentification sur tous les services via OAuth2/OIDC. Un seul compte pour Nextcloud, Gitea, Grafana, Immich et les autres.
+Chaque service passe par **Authentik** pour l'authentification (OAuth2/OIDC, un compte par utilisateur). Le flux SSO est invisible dans le navigateur : on accède à une URL, on est redirigé vers Authentik, on se connecte une fois, et on est authentifié partout. Pour les utilisateurs de la plateforme, ça signifie un seul identifiant pour tous les services, avec 2FA et gestion des sessions au même endroit.
 
-## Services déployés
+## Services
 
-- **Nextcloud** : stockage et synchronisation de fichiers, calendrier, contacts
-- **Immich** : gestion et sauvegarde de photos avec reconnaissance faciale
-- **Gitea** : instance Git légère auto-hébergée
-- **Grafana + Prometheus** : monitoring de l'infrastructure
-- **Crafty Controller** : gestion du serveur Minecraft
+La plateforme fait actuellement tourner :
+
+- **Nextcloud** : stockage de fichiers, synchronisation calendrier et contacts, dossiers partagés
+- **Immich** : backup photo avec reconnaissance faciale par IA et recherche intelligente
+- **Grafana + Prometheus** : monitoring de l'infrastructure, dashboards et alertes
+- **Crafty Controller** : gestion du serveur Minecraft moddé pour une petite communauté
 
 ## Automatisation
 
-Ansible gère la configuration des VMs et des LXC : provisioning, déploiement des paquets, configuration réseau. L'objectif est que chaque machine soit reproductible depuis zéro sans intervention manuelle.
+Ansible couvre le provisioning des VMs et des LXC : configuration des paquets, réseau, création des utilisateurs. L'objectif est une reproductibilité totale : chaque nœud doit pouvoir être reconstruit depuis zéro avec une seule commande, sans étape manuelle.
+
+## Matériel
+
+Le setup tourne sur quelques machines : un Minisforum UM790 Pro comme nœud Proxmox principal, un PC fixe en secondaire, un Dell Optiplex pour les workloads légers, et un NAS Synology DS923+ pour le stockage. Rien d'exotique, la partie intéressante c'est ce qui tourne dessus.

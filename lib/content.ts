@@ -56,7 +56,7 @@ export interface ProjectFrontmatter {
   tags?: string[];
   coverImage?: string;
   github?: string;
-  status: "En cours" | "Terminé";
+  status: "En cours" | "Terminé" | "Actif";
   featured?: boolean;
   order?: number;
 }

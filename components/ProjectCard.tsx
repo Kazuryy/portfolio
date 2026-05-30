@@ -27,9 +27,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
             backgroundColor:
               frontmatter.status === "Terminé"
                 ? "rgba(34, 197, 94, 0.15)"
+                : frontmatter.status === "Actif"
+                ? "rgba(99, 102, 241, 0.15)"
                 : "rgba(234, 179, 8, 0.15)",
             color:
-              frontmatter.status === "Terminé" ? "#16a34a" : "#ca8a04",
+              frontmatter.status === "Terminé"
+                ? "#16a34a"
+                : frontmatter.status === "Actif"
+                ? "#6366f1"
+                : "#ca8a04",
           }}
         >
           {frontmatter.status}

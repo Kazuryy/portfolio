@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - "@swc/core"
+  - sharp
+
+overrides:
+  postcss: "^8.5.10"
