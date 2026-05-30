@@ -42,6 +42,7 @@ The platform currently runs:
 - **Immich**: photo backup with AI-based facial recognition and search
 - **Grafana + Prometheus**: infrastructure monitoring, dashboards and alerts
 - **Crafty Controller**: modded Minecraft server management for a small community
+- **Termix**: SSH access, file manager and Docker management from the browser, replacing noVNC for daily administration
 
 ## Automation
 

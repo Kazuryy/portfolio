@@ -22,6 +22,10 @@ Dokploy gère le déploiement des sites et applications des élèves. Les déplo
 
 Pangolin expose les services via des tunnels VPN, sans IP fixe ni ouverture de ports. Chaque service est accessible via un sous-domaine sécurisé.
 
+## Accès aux serveurs et aux labs
+
+**Termix** est déployé en deux instances distinctes. Une pour les membres du club : accès SSH aux nœuds Proxmox, aux LXC et aux VMs directement depuis le navigateur, sans clé SSH à configurer localement. Une pour les élèves : quand un lab est provisionné, l'étudiant s'y connecte via Termix plutôt que noVNC. Le terminal est réactif, le copier-coller fonctionne, et les accès sont restreints aux machines attribuées au groupe via les ACL.
+
 ## Provisioning de labs
 
 Quand un professeur prépare un cours (réseau, sécurité, sysadmin), il définit une configuration de lab : par exemple 1 Windows Server, 1 Ubuntu, 1 pfSense. Le système récupère automatiquement la liste des élèves de la promo et leurs groupes (définis par la pédagogie de Guardia), puis provisionne un lab complet par groupe sur Proxmox via Terraform et un pipeline CI/CD.
